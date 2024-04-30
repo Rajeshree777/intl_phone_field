@@ -7557,6 +7557,28 @@ class Country {
     this.regionCode = "",
   });
 
+  Country copyWith({
+    String? name,
+    Map<String, String>? nameTranslations,
+    String? flag,
+    String? code,
+    String? dialCode,
+    String? regionCode,
+    int? minLength,
+    int? maxLength,
+  }) {
+    return Country(
+      name: name ?? this.name,
+      nameTranslations: nameTranslations ?? this.nameTranslations,
+      flag: flag ?? this.flag,
+      code: code ?? this.code,
+      dialCode: dialCode ?? this.dialCode,
+      regionCode: regionCode ?? this.regionCode,
+      minLength: minLength ?? this.minLength,
+      maxLength: maxLength ?? this.maxLength,
+    );
+  }
+
   String get fullCountryCode {
     return dialCode + regionCode;
   }
